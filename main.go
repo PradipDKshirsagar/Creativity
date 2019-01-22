@@ -1,19 +1,24 @@
 package main 
 
 import (
-	"net/http"
-	"github.com/gorilla/mux"
 	"fmt"
+	"Creativity/db"
+	//"Creativity/user"
+	"Creativity/interest"
 )
 
 func main() {
-	r :=mux.NewRouter()
-	r.HandleFunc("/ping", pingHandler)
-	http.Handle("/",r)
-	fmt.Println("Starting Server at port 8080")
-	http.ListenAndServe(":8080", nil)	
-}
+    db := db.DBConnetion()
+    defer db.Close()
+    fmt.Printf("%T",db)
 
-func pingHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w,"PONG")
-}
+   	//user.Create(db)
+    //user.Read(db)
+    //user.Update(db)
+    //user.Delete(db)
+
+    interest.Create(db)
+    interest.Read(db)
+    interest.Update(db)
+    interest.Delete(db)
+}	

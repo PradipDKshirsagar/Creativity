@@ -1,0 +1,24 @@
+CREATE TABLE users (
+	id SERIAL PRIMARY KEY,
+	age INT,
+	first_name VARCHAR,
+	last_name VARCHAR
+);
+
+DROP TABLE users;
+
+CREATE TABLE interests (
+	id SERIAL PRIMARY KEY,
+	name varchar
+);
+
+DROP TABLE interests;
+
+CREATE TABLE user_interests (
+	uID int NOT NULL,
+	iID int NOT NULL,
+	FOREIGN KEY (uID) REFERNCES users(id),
+	FOREIGN KEY (iID) REFERNCES interests(id)
+);
+
+DROP TABLE user_interests;
