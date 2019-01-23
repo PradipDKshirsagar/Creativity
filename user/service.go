@@ -37,19 +37,19 @@ func readService(id string) (User,error){
 }
 
 func updateService(id string,data User) (error){
-	db := db.Db
+    db := db.Db
 
     sqlStatement := `UPDATE users SET age = $2, first_name = $3, last_name = $4 WHERE id = $1;`
     res, err := db.Exec(sqlStatement, id, data.Age, data.FirstName, data.LastName)
     if err != nil {
-      	return errors.New("Some query fault")
+        return errors.New("Some query fault")
     }
     count, err := res.RowsAffected()
     if err != nil {
-      	return errors.New("Some query fault")
+        return errors.New("Some query fault")
     }
     if count == 0 {
-    	return errors.New("Invalid user Id... ")
+        return errors.New("Invalid user Id... ")
     }
     fmt.Println(count)
     return nil
