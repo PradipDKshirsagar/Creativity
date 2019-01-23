@@ -14,11 +14,12 @@ CREATE TABLE interests (
 
 DROP TABLE interests;
 
-CREATE TABLE user_interests (
-	uID int NOT NULL,
-	iID int NOT NULL,
-	FOREIGN KEY (uID) REFERNCES users(id),
-	FOREIGN KEY (iID) REFERNCES interests(id)
+CREATE TABLE users_interests (
+	id SERIAL PRIMARY KEY,
+	user_id int NOT NULL,
+	interest_id int NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES users(id),
+	FOREIGN KEY (interest_id) REFERENCES interests(id)
 );
 
 DROP TABLE user_interests;
