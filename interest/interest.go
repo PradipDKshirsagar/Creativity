@@ -15,7 +15,7 @@ type Interest struct {
     Name string `json:"name"`
 }
 
-type Interests []Interest
+//type Interests []Interest
 
 
 func Create(w http.ResponseWriter, r *http.Request) {
@@ -116,7 +116,7 @@ func ReadAll(w http.ResponseWriter, r *http.Request) {
     db := db.Db 
     sqlStatement := `SELECT * FROM interests;`
 
-    var interests Interests
+    var interests []Interest
 
     rows, err := db.Query(sqlStatement)
     if err != nil {

@@ -22,7 +22,7 @@ func Check(w http.ResponseWriter, r *http.Request) {
     vars := mux.Vars(r)
     id := vars["uid"]
 
-    var usIn interest.Interests
+    var usIn []interest.Interest
     rows, err := db.Query(sqlStatement,id)
     if err != nil {
         fmt.Fprint(w,"No interests present")    

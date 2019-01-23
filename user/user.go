@@ -16,7 +16,7 @@ type User struct {
     LastName string `json:"lastName"`
 }
 
-type Users []User
+//type Users []User
 
 func Create(w http.ResponseWriter, r *http.Request) {
     db := db.Db 
@@ -118,7 +118,7 @@ func ReadAll(w http.ResponseWriter, r *http.Request) {
     db := db.Db 
     sqlStatement := `SELECT * FROM USERS;`
 
-    var users Users
+    var users []User
 
     rows, err := db.Query(sqlStatement)
     if err != nil {
