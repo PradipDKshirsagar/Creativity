@@ -1,7 +1,7 @@
 package interest
 
 import (
-	"creativity/db"
+	"github.com/PradipDKshirsagar/Creativity/db"
 	"database/sql"
 	"errors"
 	"fmt"

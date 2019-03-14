@@ -1,9 +1,9 @@
 package usersinterests
 
 import (
-	"creativity/db"
-	"creativity/interest"
-	"creativity/user"
+	"github.com/PradipDKshirsagar/Creativity/db"
+	"github.com/PradipDKshirsagar/Creativity/interest"
+	"github.com/PradipDKshirsagar/Creativity/user"
 	"errors"
 	"fmt"
 )

@@ -1,10 +1,10 @@
 package main
 
 import (
-	"creativity/db"
-	"creativity/interest"
-	"creativity/user"
-	"creativity/usersinterests"
+	"github.com/PradipDKshirsagar/Creativity/db"
+	"github.com/PradipDKshirsagar/Creativity/interest"
+	"github.com/PradipDKshirsagar/Creativity/user"
+	"github.com/PradipDKshirsagar/Creativity/usersinterests"
 	"fmt"
 	"github.com/gorilla/mux"
 	"net/http"

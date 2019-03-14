@@ -1,10 +1,11 @@
 package user
 
 import (
-	"creativity/db"
 	"database/sql"
 	"errors"
 	"fmt"
+
+	"github.com/PradipDKshirsagar/Creativity/db"
 )
 
 func createService(data User) error {
